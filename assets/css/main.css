@@ -1,0 +1,118 @@
+@charset "utf-8";
+/* CSS Document */
+.menuImage{
+	width:1.25em;
+	height:1.25em;
+	content:url("../jquery-mobile/images/icons-png/bars-white.png");
+}	
+.menuButton{
+	margin-top: 0.625em;
+	float:left;
+	margin-left:0.625em;
+	width:1.563em;
+	height:1.563em;
+}
+.refreshImage{
+	width:100%;
+	height:100%;
+	content:url("../jquery-mobile/images/icons-png/refresh-white.png");
+}
+.refreshButton{
+	margin-top: 0.625em;
+	float:right;
+	margin-right:0.625em;
+	width:1.563em;
+	height:1.563em;
+}
+
+.menuUl{
+	list-style-type: none;
+	padding-right:0.625em;
+}
+.plusButton, .minusButton, .deleteButton, .editButton{
+	/*margin-top:0.9%;*/
+
+	display:inline-block;
+	margin-top:auto;
+	float:right;
+	margin-right:0.625em;
+	/*Apply slight shadow around item*/
+	background-color:rgba(0,0,0,0.2);
+}
+.plusImage, .minusImage, .deleteImage, .editImage {
+	margin:0.813em;
+	margin-bottom: 0.125em;
+}
+.plusImage{
+	content:url("../jquery-mobile/images/icons-png/plus-white.png");
+}
+.minusImage{
+	content:url("../jquery-mobile/images/icons-png/minus-white.png");
+}
+.deleteImage{
+	
+	content:url("../jquery-mobile/images/icons-png/delete-white.png");
+}
+.editImage{
+	content:url("../jquery-mobile/images/icons-png/edit-white.png");
+
+}
+li>a>.ui-input-text{
+    width: 2.500em !important;
+	height:1.875em !important;
+	display:inline-block;
+	float:right;
+	margin-right:0.938em;
+	margin-top:auto;
+}
+
+.circle:before {
+/*		width:10px;
+	height:10px;*/
+
+	float:right;
+	padding-right:0.938em;
+    content: ' \25CF';
+    font-size: 1.563em;
+}
+.itemInfo{
+
+}
+body, .ui-overlay-a{
+  background-color: #444444;
+}
+/*{
+	background-color: rgba(0,0,0,0.2);
+}*/
+.boxShadow, .plusButton, .minusButton, .deleteButton, .editButton{
+	-webkit-box-shadow: -0.313em 0.250em 0.313em -0.125em rgba(0,0,0,0.75);
+	-moz-box-shadow: -0.313em 0.250em 0.313em -0.125em rgba(0,0,0,0.75);
+	box-shadow: -0.313em 0.250em 0.313em -0.125em rgba(0,0,0,0.75);
+}
+/*body{
+	font-size: 2px !important;
+}*/
+/*a{
+	font-size: 2px;
+}*/
+.ui-btn{
+	font-size: 0.765em;
+}
+ul,.menuUl>li>.ui-btn{
+	padding-bottom: 3em;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+input.centerText{
+    text-align: center;
+}
+.km-root .km-on-android.km-4
+{
+  -webkit-transition: none;
+}

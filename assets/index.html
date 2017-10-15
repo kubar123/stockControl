@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Mobile Web App</title>
+  <link href="jquery-mobile/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
+  <link href="css/main.css" rel="stylesheet" type="text/css">
+  <script src="jquery-mobile/jquery-1.7.2.min.js" type="text/javascript"></script>
+  <script src="jquery-mobile/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+  <script src="cordova-1.7.0.js" type="text/javascript"></script>
+  <script src="js/main.js"></script><!--Main js Scripts-->
+
+  <!-- POPUP -->
+<!--   <div id="loginDialog" title="Login"><p>Username</p><br><input id="txtUsername" type="text" name="txtUser" placeholder="Username" required><br><br><input id="txtPassword" type="password" name="txtPassword" placeholder="password" required><br><br><button  
+onclick="loginButton();" type='button' href="#" id="btnLogin">Login</button>  </div>
+<script>$('#loginDialog').hide();</script> -->
+
+</head>
+
+<body data-theme="b">
+  <div data-theme="b" data-role="page" id="homepage">
+    <div data-role="panel" id="mypanel">
+      <!-- panel content goes here -->
+
+      <ul data-role="listview" class="menuUl">
+        <li>
+      <a href="#page_add_new" onclick="addNewItem" data-role="button"> Add new item </a>
+        </li>
+
+        <li>
+          <a href="#page_manage_category" onclick="addNewItem" data-role="button">Manage categories </a>
+        </li>
+
+        <li>
+          <a href="#page_tokenManagement" data-role="button">Token management</a>
+        </li>
+        <li>
+          <a href="#page_Register" data-role="button">Login/Register </a>
+        </li>
+      </ul>
+    </div>
+   <!--  <script>$('#loginDialog').show();</script> -->
+
+    <div data-tap-toggle="false" data-position="fixed" data-role="header">
+      <span class="menuButton"><a href="#mypanel"><img class="menuImage"></a></span>
+      <span class="refreshButton"><a href="#"> <img id="refreshImg" class="refreshImage"/></a></span>
+      <h1 id="id">HOME</h1>
+
+    </div>
+
+    <div data-role="content">
+    <!-- SEARCH -->
+
+
+      <ul data-role="listview" data-filter="true"  data-filter-placeholder="Search...">
+        <!-- <li><a href="#page1">Login</a></li> -->
+
+        <!-- <li>
+          <div>
+            <span id="dd">Welcome!</span> <span id="kk" style="float:right">+</span>
+          </div>
+        </li> -->
+
+        <li style="list-style: none;">
+          <div class="boxShadow" data-collapsed="false" data-collapsed-icon="carat-d" data-expanded-icon=
+          "carat-u" data-role="collapsible">
+            
+
+            <h4>Fridge</h4>
+
+            <ul data-role="listview">
+              <li data-item-name="Eggs" data-item-barcode="" data-warningqty="3">
+                <a class="itemInfo" onclick="return false;" href="#">Eggs 
+                <span onclick="plusClick(this); return false;" class="plusButton">
+                  <img class="plusImage">
+                </span>
+                <span onclick="minusClicked(this); return false;" class="minusButton">
+                  <img class="minusImage">
+                </span>
+                <input min="0" class="TextBoxMin" type="number" onclick="return false;" value="2"/>
+                <span class="circle" style="color:red"></span></a>
+              </li>
+
+
+              <li data-item-name="Cheese" data-item-barcode="" data-warningqty="6">
+                <a class="itemInfo" onclick="return false;" href="#">Cheese 
+                <span onclick="plusClick(this); return false;" class="plusButton">
+                  <img class="plusImage">
+                </span>
+                <span onclick="minusClicked(this); return false;" class="minusButton">
+                  <img class="minusImage">
+                </span>
+                <input class="TextBoxMin" min="0" type="number" onclick="return false;" value="1"/>
+                <span class="circle" style="color:red"></span></a>
+              </li>
+
+              <li data-item-name="Milk (250ml)" data-item-barcode="" data-warningqty="4">
+                <a class="itemInfo" onclick="return false;" href="#">Milk (250ml) 
+                <span onclick="plusClick(this); return false;" class="plusButton">
+                  <img class="plusImage">
+                </span>
+                <span onclick="minusClicked(this); return false;" class="minusButton">
+                  <img class="minusImage">
+                </span>
+                <input class="TextBoxMin" min="0" type="number" onclick="return false;" value="8"/>
+                <span class="circle" style="color:green"></span></a>
+              </li>
+            </ul>
+          </div>
+
+           <li style="list-style: none;">
+          <div class="boxShadow" data-collapsed="false" data-collapsed-icon="carat-d" data-expanded-icon=
+          "carat-u" data-role="collapsible">
+            
+
+            <h4>Pantry</h4>
+
+            <ul data-role="listview">
+              <li data-item-name="Flour (250g)" data-item-barcode="" data-warningqty="3">
+                <a class="itemInfo" onclick="return false;" href="#">flour (250g)
+                <span onclick="plusClick(this); return false;" class="plusButton">
+                  <img class="plusImage">
+                </span>
+                <span onclick="minusClicked(this); return false;" class="minusButton">
+                  <img class="minusImage">
+                </span>
+                <input min="0" class="TextBoxMin" type="number" onclick="return false;" value="9"/>
+                <span class="circle" style="color:green"></span></a>
+              </li>
+
+
+              <li data-item-name="Cereal" data-item-barcode="" data-warningqty="6">
+                <a class="itemInfo" onclick="return false;" href="#">Cereal 
+                <span onclick="plusClick(this); return false;" class="plusButton">
+                  <img class="plusImage">
+                </span>
+                <span onclick="minusClicked(this); return false;" class="minusButton">
+                  <img class="minusImage">
+                </span>
+                <input class="TextBoxMin" min="0" type="number" onclick="return false;" value="1"/>
+                <span class="circle" style="color:red"></span></a>
+              </li>
+
+              <li data-item-name="Honey (100ml)" data-item-barcode="" data-warningqty="2">
+                <a class="itemInfo" onclick="return false;" href="#">Honey (100ml)
+                <span onclick="plusClick(this); return false;" class="plusButton">
+                  <img class="plusImage">
+                </span>
+                <span onclick="minusClicked(this); return false;" class="minusButton">
+                  <img class="minusImage">
+                </span>
+                <input class="TextBoxMin" min="0" type="number" onclick="return false;" value="5"/>
+                <span class="circle" style="color:green"></span></a>
+              </li>
+            </ul>
+          </div>
+          </li>
+        </li>
+      </ul><!--  -->
+    </div>
+
+    <div data-tap-toggle="false" data-position="fixed" data-role="footer">
+      <h4>Jakub Rybicki - 100315738 <span id="rfgthj"></span></h4>
+    </div>
+  </div>
+
+  <div data-theme="b" data-dialog="true" data-role="page" id="page_add_new">
+    <div data-role="header">
+      <h1>Add a new item</h1>
+    </div>
+
+    <div data-role="content" id="Page1content">
+    <form>
+      <input type="text" required="required" placeholder="*Item name" id="txtItemName"/>
+      <br> <input required="required" type="number" id="txtQty" placeholder="*Quantity"/>
+      <br> <input required="required" type="number" id="txtQtyAlert" placeholder="*Quantity for alert"/>
+      <br> <input type="text" id="txtBarcode" placeholder="Barcode"/>
+      <br> <input type="submit" value="Add"/>
+      </form>
+    </div>
+  </div>
+
+  <div data-dialog="true" data-theme="b" data-add-back-btn="true" data-role="page" id="page_manage_category">
+    <div data-role="header">
+      <h1>Manage Categories</h1>
+    </div>
+
+    <div data-role="content" id="Page2content">
+    <ul data-role="listview">
+      <li style="list-style: none;">
+          <div data-inset="false" data-collapsed="true" class="boxShadow" data-collapsed-icon="carat-d" data-expanded-icon=
+          "carat-u" data-role="collapsible">
+            <h4>Add new</h4>
+            <ul data-role="listview">
+              <li>
+                <input type="text" val="" placeholder="Category name"/>
+                <input type="submit" value="Add"/>
+              </li>
+           </ul>
+          </div>
+      </li>
+      <li>
+       <a class="itemInfo" onclick="return false;" href="#">Frozen 
+                <span onclick="delCategoryBtn(this); return false;" class="deleteButton">
+                  <img class="deleteImage" >
+                </span>
+                <span onclick="editCategoryBtn(this); return false;" class="editButton">
+                  <img class="editImage">
+                </span>
+                </a>
+              
+
+              
+      </li>
+      </ul>
+
+    </div>
+  </div>
+
+  <div data-theme="b" data-add-back-btn="true" data-role="page" id="page_edit_item">
+    <div data-role="header">
+      <h1>Edit item</h1>
+    </div>
+
+    <div data-role="content">
+      <form>
+        <input type="text" required="required" placeholder="*Item name" id="txtItemNameEdit"/>
+        <br> <input required="required" type="number" id="txtQtyEdit" placeholder="*Quantity"/>
+        <br> <input required="required" type="number" id="txtQtyAlertEdit" placeholder="*Quantity for alert"/>
+        <br> <input type="text" id="txtBarcodeEdit" placeholder="Barcode"/>
+        <br> <input type="submit" value="Change"/>
+        <br><br><a href="#" data-role="button" data-theme="a">DELETE ITEM</a>
+      </form>
+    </div>
+  </div>
+
+  <!-- ________________________________ REGISTER ___________________________________ -->
+
+  <div data-dialog="true" data-theme="b" data-add-back-btn="true" data-role="page" id="page_Register">
+    <div data-role="header">
+      <h1>Login/register</h1>
+    </div>
+
+    <div data-role="content">
+    
+    <ul data-role="listview" >
+      <li style="list-style: none;">
+      <div id="LoginRegisterTabs" data-role="collapsible-set" data-theme="b">
+          <div id="registerTokenTab" data-inset="false" data-collapsed="false" class="boxShadow" data-collapsed-icon="carat-d" data-expanded-icon=
+          "carat-u" data-role="collapsible">
+            <h4>Join using token</h4>
+            <ul data-role="listview">
+              <li>
+                <input type="text" placeholder="Token"/>
+                <input type="text" placeholder="Username"/>
+                <input type="password" placeholder="Password"/>
+                <input type="password" placeholder="Confirm password"/>
+                <input type="submit" value="Join"/>
+              </li>
+           </ul>
+          </div>
+          <div id="newHouseTab" data-inset="false" data-collapsed="true" class="boxShadow" data-collapsed-icon="carat-d" data-expanded-icon=
+          "carat-u" data-role="collapsible">
+            <h4>New household</h4>
+            <ul data-role="listview">
+              <li>
+              <form>
+                <input type="text" id="txtHName" value="" placeholder="House name"/>
+                <input type="text" id="txtUser" placeholder="Username"/>
+                <input type="password" id="txtPass" placeholder="Password"/>
+                <input type="password" id="txtConfPass" placeholder="Confirm password"/>
+                <input type="button" onclick="addHouse()" value="Create house"/>
+                </form>
+              </li>
+           </ul>
+          </div>
+
+          <div id="loginTab" data-inset="false" data-collapsed="true" class="boxShadow" data-collapsed-icon="carat-d" data-expanded-icon=
+          "carat-u" data-role="collapsible">
+            <h4>Login</h4>
+            <ul data-role="listview">
+              <li>
+                <input id="loginUser" type="text" value="" placeholder="Username"/>
+                <input id="loginPass" type="password" value="" placeholder="password"/>
+                <input id="loginSubmit" type="button" value="Login"/>
+              </li>
+           </ul>
+          </div>
+    </div>
+
+      </li></ul>
+    </div>
+  </div>
+  <!-- ________________________________ TOKEN PAGE ____________________________ -->
+    <div data-dialog="true" data-theme="b" data-add-back-btn="true" data-role="page" id="page_tokenManagement">
+    <div data-role="header">
+      <h1>Tokens</h1>
+    </div>
+
+    <div data-role="content">
+    <label for="tokenSpot">Your token:</label><input type="text" id="tokenSpot"  readonly="readonly" name="tokenSpot" class="centerText" value="H390DPWKDN7EUFOEJF6730KDFY"/>
+    <br>
+    <input type="button" value="Request a new token" data-theme="a"/>
+    </div>
+  </div>
+</body>
+
+
+</html>
